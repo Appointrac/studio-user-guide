@@ -2,26 +2,26 @@
 ![Version](https://img.shields.io/badge/version-0.1.0-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 
-# 🎬 FlowQueue — Batch Prompt Automation for Google Flow
+# 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
 
-**FlowQueue** is a Chrome extension for batch-running prompts on
+**Appointrac Studio** is a Chrome extension for batch-running prompts on
 [Google Flow](https://labs.google/fx/tools/flow). Queue up a list of
-prompts, click Run, and walk away — FlowQueue submits them one by one and
+prompts, click Run, and walk away — Appointrac Studio submits them one by one and
 downloads the finished videos/images automatically, instead of you
 clicking through Flow's UI by hand for every single prompt.
 
-FlowQueue is an independent project built by [Appointrac](https://appointrac.in).
+Appointrac Studio is an independent project built by [Appointrac](https://appointrac.in).
 It is not affiliated with, endorsed by, or sponsored by Google.
 
 > [!NOTE]
-> FlowQueue is in early access — no Chrome Web Store listing yet, no
+> Appointrac Studio is in early access — no Chrome Web Store listing yet, no
 > accounts, and no billing. This guide documents what's actually built
 > today, not what's planned.
 
 ### ⚡ Quick start
 
 1. [Install the extension](#-installation) (unpacked, for now).
-2. Open a Google Flow project and open FlowQueue's side panel.
+2. Open a Google Flow project and open Appointrac Studio's side panel.
 3. Pick a mode, paste in some prompts, hit **Run**.
 
 That's it for a first try — the rest of this guide covers everything
@@ -54,11 +54,11 @@ else in more depth.
   import options.
 * **🔄 Image → Image** — attach an already-uploaded Flow image as a
   reference, then describe the change you want as a prompt. (Flow itself
-  has no dedicated mode for this — FlowQueue builds it on top of
+  has no dedicated mode for this — Appointrac Studio builds it on top of
   Text→Image by attaching the reference image first.)
 * **🧑‍🤝‍🧑 Character & image auto-attach** — mention a Flow Character or an
   uploaded reference image by name (`@Alex`, `@storefront.jpeg`) and
-  FlowQueue attaches it automatically before the prompt runs.
+  Appointrac Studio attaches it automatically before the prompt runs.
 * **📂 Spreadsheet import** — pull prompts from `.xlsx` / `.csv` files,
   with a preview to pick the right sheet and column first.
 * **💾 Auto download** — save finished outputs straight to a named
@@ -75,7 +75,7 @@ until they're real): Frame → Video, Ingredients → Video, Agent Automation.
 
 ## 📥 Installation
 
-FlowQueue isn't on the Chrome Web Store yet. For now:
+Appointrac Studio isn't on the Chrome Web Store yet. For now:
 
 1. Download or clone the extension's `dist/` build.
 2. Open `chrome://extensions` in Chrome.
@@ -89,7 +89,7 @@ FlowQueue isn't on the Chrome Web Store yet. For now:
 
 ### Getting started
 
-1. **Open a Google Flow project** — FlowQueue only activates on Flow
+1. **Open a Google Flow project** — Appointrac Studio only activates on Flow
    project pages (`labs.google/fx/tools/flow/project/...`).
 2. **Open the side panel** from the extension icon.
 3. **Pick a mode** — choose a category (Video / Image / Agent) first,
@@ -126,10 +126,10 @@ Cars and pedestrians moving through the scene.
 ### 3. Image → Image
 
 1. Upload your reference image(s) to Flow directly, via Flow's own site,
-   first — FlowQueue selects from images already in your Flow account,
+   first — Appointrac Studio selects from images already in your Flow account,
    it doesn't upload new files itself.
 2. Select **Image → Image → Image**.
-3. Click **Scan Uploads** in the Image References section so FlowQueue
+3. Click **Scan Uploads** in the Image References section so Appointrac Studio
    knows what's available.
 4. Write prompts that mention the reference image by filename, e.g.
    `@storefront.jpeg but at night with warm lighting`.
@@ -208,7 +208,7 @@ mode is currently selected in Control — organized into **Video**,
   when the panel opens.
 * **Max Retries on Failure** — how many times (0–5) a failed prompt
   retries automatically, with a longer wait between each attempt. If
-  Flow's UI itself has changed and FlowQueue can't find something it
+  Flow's UI itself has changed and Appointrac Studio can't find something it
   expects, that's never retried — retrying can't fix that kind of
   problem.
 * **Language** — English only for now; present so the layout won't need
@@ -219,7 +219,7 @@ mode is currently selected in Control — organized into **Video**,
 
 > [!NOTE]
 > Prompts always run one at a time, never in parallel. That's a Flow
-> limitation, not a FlowQueue setting — Flow only allows one active
+> limitation, not a Appointrac Studio setting — Flow only allows one active
 > generation per account at a time.
 
 -----
@@ -227,7 +227,7 @@ mode is currently selected in Control — organized into **Video**,
 ## 💡 Tips
 
 * **Rate limits** — increase the random delay between prompts if you're
-  running a large batch; if FlowQueue detects a likely rate-limit or
+  running a large batch; if Appointrac Studio detects a likely rate-limit or
   CAPTCHA, the whole queue pauses and shows a **Resume** button rather
   than continuing to hammer Flow.
 * **Naming for auto-match** — name uploaded reference images and Flow
@@ -244,10 +244,10 @@ mode is currently selected in Control — organized into **Video**,
 |---|---|
 | Nothing happens when you click Run | Confirm you're on a Flow *project* page, not the Flow home/dashboard. |
 | A prompt fails with an "automation issue" warning | Flow's own UI likely changed since this was built — check Debug Logs for the specific step that failed, and report it. |
-| Chrome keeps asking where to save every download | Turn off *"Ask where to save each file before downloading"* in `chrome://settings/downloads` — FlowQueue's folder/naming settings need this off to take effect. |
+| Chrome keeps asking where to save every download | Turn off *"Ask where to save each file before downloading"* in `chrome://settings/downloads` — Appointrac Studio's folder/naming settings need this off to take effect. |
 | A `@mention` isn't attaching | Click **Scan Characters** / **Scan Uploads** again — the cached list may be stale, or the name doesn't exactly match what's scanned. |
-| A "started debugging this browser" banner appears on the Flow tab | Expected — FlowQueue uses Chrome's DevTools Protocol to produce trusted clicks/keystrokes. It clears once the current step finishes. |
-| The whole queue stops with a "blocked" message | A likely rate-limit/CAPTCHA was detected. Resolve it in the Flow tab directly, then click **Resume** in FlowQueue. |
+| A "started debugging this browser" banner appears on the Flow tab | Expected — Appointrac Studio uses Chrome's DevTools Protocol to produce trusted clicks/keystrokes. It clears once the current step finishes. |
+| The whole queue stops with a "blocked" message | A likely rate-limit/CAPTCHA was detected. Resolve it in the Flow tab directly, then click **Resume** in Appointrac Studio. |
 
 -----
 
@@ -265,5 +265,5 @@ storage on your machine — nothing is sent to an external server.
   tab, or email [info@appointrac.in](mailto:info@appointrac.in) directly.
 * **Maintained by** — [Appointrac](https://appointrac.in)
 
-_This guide describes FlowQueue's current, real feature set — it gets
+_This guide describes Appointrac Studio's current, real feature set — it gets
 updated as new modes and settings actually ship, not ahead of them._
