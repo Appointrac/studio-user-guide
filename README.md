@@ -1,5 +1,6 @@
-![Status](https://img.shields.io/badge/status-early_access-blue?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-0.1.0-informational?style=for-the-badge)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
+<!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
+![Version](https://img.shields.io/badge/version-1.0.0-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 
 # 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
@@ -14,15 +15,18 @@ Appointrac Studio is an independent project built by [Appointrac](https://appoin
 It is not affiliated with, endorsed by, or sponsored by Google.
 
 > [!NOTE]
-> Appointrac Studio is in early access — no Chrome Web Store listing yet, no
-> accounts, and no billing. This guide documents what's actually built
-> today, not what's planned.
+> Appointrac Studio is live on the
+> [Chrome Web Store](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji).
+> Free to try (20 prompts/day), with paid plans for unlimited use — see
+> [Account & Plans](#-account--plans). This guide documents what's actually
+> built today, not what's planned.
 
 ### ⚡ Quick start
 
-1. [Install the extension](#-installation) (unpacked, for now).
-2. Open a Google Flow project and open Appointrac Studio's side panel.
-3. Pick a mode, paste in some prompts, hit **Run**.
+1. [Install the extension](#-installation) from the Chrome Web Store.
+2. [Log in](#-account--plans) with Google — the free plan needs no payment.
+3. Open a Google Flow project and open Appointrac Studio's side panel.
+4. Pick a mode, paste in some prompts, hit **Run**.
 
 That's it for a first try — the rest of this guide covers everything
 else in more depth.
@@ -31,6 +35,7 @@ else in more depth.
 
 - [Key Features](#-key-features)
 - [Installation](#-installation)
+- [Account & Plans](#-account--plans)
 - [User Guide](#-user-guide)
   - [Text → Video](#1-text--video)
   - [Text → Image](#2-text--image)
@@ -75,13 +80,29 @@ until they're real): Frame → Video, Ingredients → Video, Agent Automation.
 
 ## 📥 Installation
 
-Appointrac Studio isn't on the Chrome Web Store yet. For now:
+1. Open the [Appointrac Studio listing](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
+   on the Chrome Web Store.
+2. Click **Add to Chrome**.
+3. Pin the extension icon to your toolbar for easy access.
 
-1. Download or clone the extension's `dist/` build.
-2. Open `chrome://extensions` in Chrome.
-3. Enable **Developer mode** (top right).
-4. Click **Load unpacked** and select the `dist/` folder.
-5. Pin the extension icon to your toolbar for easy access.
+-----
+
+## 👤 Account & Plans
+
+Appointrac Studio needs a Google account to run prompts — a **Log in** button sits at the top
+of the side panel until you sign in, then shows your email and current plan instead.
+
+| Plan | Prompts | Price |
+|---|---|---|
+| Free | 20/day, resets every 24 hours | No payment required |
+| 1 Month / 3 Months / 1 Year | Unlimited (unless an admin-configured daily cap applies) | One-time payment, no auto-renewal |
+
+- Paid plans are a **single upfront payment for a fixed period** — not a subscription, nothing
+  re-bills automatically. When a paid plan's period ends, you're back on the free plan's daily
+  limit, not locked out.
+- See [current pricing and to upgrade](https://appointrac.in/studio).
+- Full terms: [Terms of Service](https://appointrac.in/studio/terms) ·
+  [Privacy Policy](https://appointrac.in/studio/privacy).
 
 -----
 
@@ -248,14 +269,21 @@ mode is currently selected in Control — organized into **Video**,
 | A `@mention` isn't attaching | Click **Scan Characters** / **Scan Uploads** again — the cached list may be stale, or the name doesn't exactly match what's scanned. |
 | A "started debugging this browser" banner appears on the Flow tab | Expected — Appointrac Studio uses Chrome's DevTools Protocol to produce trusted clicks/keystrokes. It clears once the current step finishes. |
 | The whole queue stops with a "blocked" message | A likely rate-limit/CAPTCHA was detected. Resolve it in the Flow tab directly, then click **Resume** in Appointrac Studio. |
+| "Daily free limit reached" / "Your plan has expired" | You're on the free plan's 20/day limit, or a paid plan's period ended. Click **Upgrade** in the banner, or see [Account & Plans](#-account--plans). |
+| "Your session expired" | Click **Log in** again — sessions can expire after time away; your queue and settings aren't affected. |
 
 -----
 
 ## 🔒 Privacy
 
-Everything runs locally inside your own browser. Prompts, settings, and
-scanned Character/image names are stored in Chrome's local extension
-storage on your machine — nothing is sent to an external server.
+**Your prompts never leave your browser.** They're sent directly to Google Flow's own page to
+run, never to Appointrac's servers — settings and scanned Character/image names likewise stay
+in Chrome's local extension storage on your machine.
+
+Signing in does send your Google email/name and plan/usage counts (e.g. "one more prompt run
+today") to Appointrac's backend, to run your account and enforce plan limits — never the content
+of what you typed. Full details, including what's deliberately *not* collected:
+[Privacy Policy](https://appointrac.in/studio/privacy).
 
 -----
 
@@ -263,6 +291,8 @@ storage on your machine — nothing is sent to an external server.
 
 * **Report a bug** — use the **Report Bug** button in the Debug Logs
   tab, or email [info@appointrac.in](mailto:info@appointrac.in) directly.
+* **Billing/refund questions** — see the
+  [Terms of Service](https://appointrac.in/studio/terms), or email the address above.
 * **Maintained by** — [Appointrac](https://appointrac.in)
 
 _This guide describes Appointrac Studio's current, real feature set — it gets
