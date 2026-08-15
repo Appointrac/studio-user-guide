@@ -100,9 +100,9 @@ of the side panel until you sign in, then shows your email and current plan inst
 - Paid plans are a **single upfront payment for a fixed period** — not a subscription, nothing
   re-bills automatically. When a paid plan's period ends, you're back on the free plan's daily
   limit, not locked out.
-- See [current pricing and to upgrade](https://appointrac.in/studio).
-- Full terms: [Terms of Service](https://appointrac.in/studio/terms) ·
-  [Privacy Policy](https://appointrac.in/studio/privacy).
+- See [current pricing and to upgrade](https://studio.appointrac.in).
+- Full terms: [Terms of Service](https://studio.appointrac.in/terms) ·
+  [Privacy Policy](https://studio.appointrac.in/privacy).
 
 -----
 
@@ -283,7 +283,7 @@ in Chrome's local extension storage on your machine.
 Signing in does send your Google email/name and plan/usage counts (e.g. "one more prompt run
 today") to Appointrac's backend, to run your account and enforce plan limits — never the content
 of what you typed. Full details, including what's deliberately *not* collected:
-[Privacy Policy](https://appointrac.in/studio/privacy).
+[Privacy Policy](https://studio.appointrac.in/privacy).
 
 -----
 
@@ -292,7 +292,7 @@ of what you typed. Full details, including what's deliberately *not* collected:
 * **Report a bug** — use the **Report Bug** button in the Debug Logs
   tab, or email [info@appointrac.in](mailto:info@appointrac.in) directly.
 * **Billing/refund questions** — see the
-  [Terms of Service](https://appointrac.in/studio/terms), or email the address above.
+  [Terms of Service](https://studio.appointrac.in/terms), or email the address above.
 * **Maintained by** — [Appointrac](https://appointrac.in)
 
 _This guide describes Appointrac Studio's current, real feature set — it gets
