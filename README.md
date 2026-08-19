@@ -1,6 +1,6 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
-![Version](https://img.shields.io/badge/version-1.0.0-informational?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.1-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 
 # 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
