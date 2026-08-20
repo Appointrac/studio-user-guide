@@ -1,8 +1,6 @@
 # Changelog
 
-User-facing changes for each released version of Appointrac Studio. One
-entry per version, newest first — keep in sync with the version badge in
-[README.md](README.md) whenever a new version ships.
+User-facing changes for each released version of Appointrac Studio.
 
 ## v1.0.2 (current)
 
