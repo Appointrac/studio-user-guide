@@ -2,6 +2,7 @@
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
 ![Version](https://img.shields.io/badge/version-1.0.2-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
+[![Changelog](https://img.shields.io/badge/changelog-what's_new-informational?style=for-the-badge)](CHANGELOG.md)
 
 # 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
 
