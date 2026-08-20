@@ -1,6 +1,6 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
-![Version](https://img.shields.io/badge/version-1.0.1-informational?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.2-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 
 # 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
@@ -90,16 +90,21 @@ until they're real): Frame → Video, Ingredients → Video, Agent Automation.
 ## 👤 Account & Plans
 
 Appointrac Studio needs a Google account to run prompts — a **Log in** button sits at the top
-of the side panel until you sign in, then shows your email and current plan instead.
+of the side panel until you sign in, then shows your email (masked by default — hover to
+reveal it) and current plan instead.
 
 | Plan | Prompts | Price |
 |---|---|---|
-| Free | 20/day, resets every 24 hours | No payment required |
-| 1 Month / 3 Months / 1 Year | Unlimited (unless an admin-configured daily cap applies) | One-time payment, no auto-renewal |
+| Free | 20/day, resets every 24 hours (a countdown next to the usage bar shows exactly when) | No payment required |
+| 1 Month / 3 Months / 1 Year | Unlimited (unless an admin-configured daily cap applies) | One-time payment **or** auto-renewing subscription |
 
-- Paid plans are a **single upfront payment for a fixed period** — not a subscription, nothing
-  re-bills automatically. When a paid plan's period ends, you're back on the free plan's daily
-  limit, not locked out.
+- Every paid plan can be bought either way: a **one-time payment** for a fixed period (nothing
+  re-bills automatically — when it ends, you're back on the free plan's daily limit, not locked
+  out), or a **subscription** that renews itself automatically each period.
+- If you're subscribed, the Control tab shows your renewal status directly (e.g. "Renews on
+  12 Sep 2026") with a **Cancel** action right there — no need to visit the website. Cancelling
+  doesn't cut you off immediately: you keep access for the rest of the period you already paid
+  for, and it simply won't renew after that.
 - See [current pricing and to upgrade](https://studio.appointrac.in).
 - Full terms: [Terms of Service](https://studio.appointrac.in/terms) ·
   [Privacy Policy](https://studio.appointrac.in/privacy).
@@ -192,7 +197,9 @@ documented here once built.
 ### Queue management
 
 * Pending/running/finished prompts are grouped by batch in the queue
-  list below the Run button.
+  list below the Run button, auto-scrolling to whichever item is
+  currently active and capped to ~7 visible rows (scroll within the
+  list for the rest) so a large batch doesn't take over the whole panel.
 * **Stop** cancels a currently running batch; **Clear** removes a
   finished one.
 * **Retry** re-runs just the failed/cancelled items from a batch,
