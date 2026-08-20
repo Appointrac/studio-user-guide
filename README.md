@@ -256,7 +256,7 @@ mode is currently selected in Control — organized into **Video**,
 ## 🆕 What's New
 
 <!-- One line per shipped version, newest first - keep in sync with the
-     version badge above and with the actual GitHub release each links to. -->
+     version badge above whenever a new version ships. -->
 
 - **v1.0.2** (current) — Subscribe to a plan for auto-renewal, alongside the
   existing one-time purchase, with renewal status and a cancel action right
@@ -266,8 +266,6 @@ mode is currently selected in Control — organized into **Video**,
 - **v1.0.1** — Moved to a new domain, `studio.appointrac.in`. No visible
   feature changes.
 - **v1.0.0** — First public release on the Chrome Web Store.
-
-Full technical notes for every release: [GitHub Releases](https://github.com/Appointrac/studio/releases).
 
 -----
 
