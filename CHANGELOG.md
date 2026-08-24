@@ -2,7 +2,18 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.3 (current)
+## v1.0.4 (current)
+
+Save your current prompts (plus mode/category/delay settings) as a
+named, reusable set instead of re-pasting the same batch every time —
+load or delete saved sets anytime. Scheduled runs let you turn on a
+daily schedule, pick a saved set and a time, and Appointrac Studio runs
+it automatically (won't double-fire if a run is already in progress).
+Also: the Character picker, Save to Folder, Saved Sets, and Scheduled
+Run now live in a collapsible "Advanced" section, keeping the main
+Control tab focused on Mode, Delay, Prompts, and Run.
+
+## v1.0.3
 
 A pre-run estimate above the Run button shows how many generations a
 batch will use and how many you have left before you click Run. Daily
