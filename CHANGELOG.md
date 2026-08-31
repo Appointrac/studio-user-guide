@@ -2,7 +2,18 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.6 (current)
+## v1.0.7 (current)
+
+The panel now shows a dismissible announcement banner (info/warning)
+sent directly from Appointrac's backend, so a message — a new model, a
+known issue — can reach you instantly instead of waiting on a Chrome Web
+Store update. Dismissing one is remembered; a different, newer
+announcement still shows up later. Also: video model matching is now
+resilient to Flow renaming a model's version number again — v1.0.6
+handled the specific "Omni Flash" → "Omni 1.1 Flash" rename, this
+generalizes it so a future version bump won't need another release.
+
+## v1.0.6
 
 Video model selection is now resilient to Flow renaming a model's
 version number — Flow renamed "Omni Flash" to "Omni 1.1 Flash" without
