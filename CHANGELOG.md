@@ -2,7 +2,26 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.4 (current)
+## v1.0.6 (current)
+
+Video model selection is now resilient to Flow renaming a model's
+version number — Flow renamed "Omni Flash" to "Omni 1.1 Flash" without
+warning, which broke automation until this fix; a future rename like
+"Omni 1.2 Flash" won't need another release. Also fixed a bug where a
+plain Text→Video run could get left stuck on Flow's Ingredients tab
+instead of switching to Frames.
+
+## v1.0.5
+
+Two new video modes: **Frame → Video** (attach a Start frame, and
+optionally an End frame, then describe the motion in between) and
+**Ingredients → Video** (attach any number of reference images as
+ingredients). Prompt templates let you write `{red|blue|green}` inside a
+prompt and Appointrac Studio expands it into every combination
+automatically instead of writing each variant out by hand. Also: a
+Clear button for the Prompts box.
+
+## v1.0.4
 
 Save your current prompts (plus mode/category/delay settings) as a
 named, reusable set instead of re-pasting the same batch every time —
