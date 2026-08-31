@@ -1,6 +1,6 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
-![Version](https://img.shields.io/badge/version-1.0.4-informational?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.6-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 [![Changelog](https://img.shields.io/badge/changelog-what's_new-informational?style=for-the-badge)](CHANGELOG.md)
 
@@ -39,8 +39,11 @@ else in more depth.
 - [Account & Plans](#-account--plans)
 - [User Guide](#-user-guide)
   - [Text → Video](#1-text--video)
-  - [Text → Image](#2-text--image)
-  - [Image → Image](#3-image--image)
+  - [Frame → Video](#2-frame--video)
+  - [Ingredients → Video](#3-ingredients--video)
+  - [Text → Image](#4-text--image)
+  - [Image → Image](#5-image--image)
+  - [Prompt templates](#-prompt-templates)
 - [File Saving & Naming](#-file-saving--naming)
 - [Settings](#️-settings)
 - [Tips](#-tips)
@@ -56,6 +59,10 @@ else in more depth.
   one at a time, instead of manually submitting each one in Flow.
 * **📝 Text → Video** — generate videos from plain text prompts, imported
   from a text box, a `.txt` file, or a spreadsheet.
+* **🎞️ Frame → Video** — attach a Start frame (and optionally an End
+  frame) image, then describe the motion in between as a prompt.
+* **🧪 Ingredients → Video** — attach any number of reference images as
+  "ingredients" Flow weaves into the generated video.
 * **🖼️ Text → Image** — generate images from text prompts, same queue and
   import options.
 * **🔄 Image → Image** — attach an already-uploaded Flow image as a
@@ -65,6 +72,9 @@ else in more depth.
 * **🧑‍🤝‍🧑 Character & image auto-attach** — mention a Flow Character or an
   uploaded reference image by name (`@Alex`, `@storefront.jpeg`) and
   Appointrac Studio attaches it automatically before the prompt runs.
+* **🔀 Prompt templates** — write `{red|blue|green}` inside a prompt and
+  Appointrac Studio expands it into one queue entry per combination
+  automatically, instead of writing out every variant by hand.
 * **📂 Spreadsheet import** — pull prompts from `.xlsx` / `.csv` files,
   with a preview to pick the right sheet and column first.
 * **💾 Auto download** — save finished outputs straight to a named
@@ -75,7 +85,7 @@ else in more depth.
   copyable or one click away from a pre-filled bug report email.
 
 **Not built yet** (visible in the mode selector, intentionally disabled
-until they're real): Frame → Video, Ingredients → Video, Agent Automation.
+until it's real): Agent Automation.
 
 -----
 
@@ -126,7 +136,8 @@ reveal it) and current plan instead.
 
 1. Select **Video → Text → Video**.
 2. Enter prompts in the box (blank line between each) or click **Upload
-   .txt file** / **Upload .xlsx / .csv** to import them.
+   .txt file** / **Upload .xlsx / .csv** to import them — **Clear** empties
+   the box to start over.
 3. Optionally set a **Model**, **Default Aspect Ratio**, and **Default
    Video Option** (duration) in Settings — these get applied to Flow
    automatically before each prompt runs.
@@ -142,7 +153,39 @@ A bustling city street at night with neon lights.
 Cars and pedestrians moving through the scene.
 ```
 
-### 2. Text → Image
+### 2. Frame → Video
+
+1. Upload your reference image(s) to Flow directly, via Flow's own site,
+   first — same as Image→Image, Appointrac Studio selects from images
+   already in your Flow account rather than uploading new files itself.
+2. Select **Video → Frame → Video**.
+3. Click **Scan Uploads** in the Frame References section.
+4. Write a prompt that `@mention`s your image(s): the **first** `@mention`
+   becomes the Start frame, and a **second** `@mention` (if present)
+   becomes the End frame — e.g. `@sunrise.jpeg slowly fading into
+   @sunset.jpeg`.
+5. Turn on **Auto-add image by @mention**, or set a **Default reference
+   image** to attach a Start frame to every prompt regardless of
+   mentions.
+6. Click **Run**.
+
+> [!NOTE]
+> Not every video model supports an End frame — Omni 1.1 Flash doesn't,
+> and Flow rejects the attach attempt if you try. Pick a Veo model in
+> Settings if you need one.
+
+### 3. Ingredients → Video
+
+1. Upload your reference image(s) to Flow directly first, same as above.
+2. Select **Video → Ingredients → Video**.
+3. Click **Scan Uploads** in the Ingredient References section.
+4. Write a prompt that `@mention`s as many images as you want — every
+   `@mention` gets attached as an ingredient, not just the first two.
+5. Turn on **Auto-add image by @mention**, or set a **Default reference
+   image** to attach to every prompt regardless of mentions.
+6. Click **Run**.
+
+### 4. Text → Image
 
 1. Select **Image → Text → Image**.
 2. Enter image descriptions the same way as Text→Video prompts.
@@ -150,7 +193,7 @@ Cars and pedestrians moving through the scene.
    Settings.
 4. Click **Run**.
 
-### 3. Image → Image
+### 5. Image → Image
 
 1. Upload your reference image(s) to Flow directly, via Flow's own site,
    first — Appointrac Studio selects from images already in your Flow account,
@@ -172,9 +215,29 @@ Cars and pedestrians moving through the scene.
 
 ### Coming soon
 
-**Frame → Video**, **Ingredients → Video**, and **Agent Automation** are
-visible in the mode selector but currently disabled — they'll be
-documented here once built.
+**Agent Automation** is visible in the mode selector but currently
+disabled — it'll be documented here once built.
+
+-----
+
+### 🔀 Prompt templates
+
+Write `{option one|option two|option three}` anywhere inside a prompt
+and Appointrac Studio expands it into one queue entry per combination,
+instead of you writing out every variant by hand. Multiple groups in the
+same prompt expand to every combination of all of them:
+
+```
+A {red|blue} car driving through a {city|forest} at night.
+```
+
+expands to four separate prompts (red/city, red/forest, blue/city,
+blue/forest) before the queue runs. A plain `{like this}` with no `|`
+inside is left untouched — only groups with at least one `|` are treated
+as a template. Capped at 200 expansions per prompt as a safety limit (a
+typo adding an extra option or group shouldn't silently balloon into
+hundreds of real generations) — over that cap, the prompt runs as
+literal, unexpanded text instead.
 
 -----
 
@@ -219,7 +282,7 @@ mode is currently selected in Control — organized into **Video**,
 | Setting | Options |
 |---|---|
 | Auto Download Quality (Video) | No Download, 270p, 720p, 1080p, 4K |
-| Model | Omni Flash, Veo 3.1 – Lite, Veo 3.1 – Fast, Veo 3.1 – Quality |
+| Model | Omni 1.1 Flash, Veo 3.1 – Lite, Veo 3.1 – Fast, Veo 3.1 – Quality |
 | Default Aspect Ratio | 16:9, 9:16 |
 | Default Video Option (duration) | 4s, 6s, 8s, 10s |
 
