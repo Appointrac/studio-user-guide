@@ -1,6 +1,6 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
-![Version](https://img.shields.io/badge/version-1.0.6-informational?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.7-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 [![Changelog](https://img.shields.io/badge/changelog-what's_new-informational?style=for-the-badge)](CHANGELOG.md)
 
@@ -37,6 +37,7 @@ else in more depth.
 - [Key Features](#-key-features)
 - [Installation](#-installation)
 - [Account & Plans](#-account--plans)
+- [Announcements](#-announcements)
 - [User Guide](#-user-guide)
   - [Text → Video](#1-text--video)
   - [Frame → Video](#2-frame--video)
@@ -83,6 +84,9 @@ else in more depth.
   increasing delay between attempts, up to a configurable limit.
 * **🐛 Debug Logs tab** — a live log of what the extension is doing,
   copyable or one click away from a pre-filled bug report email.
+* **📢 Announcements** — a dismissible banner in the panel for
+  timely messages (a new model, a known issue) sent directly from
+  Appointrac's backend, without waiting for a Chrome Web Store update.
 
 **Not built yet** (visible in the mode selector, intentionally disabled
 until it's real): Agent Automation.
@@ -119,6 +123,17 @@ reveal it) and current plan instead.
 - See [current pricing and to upgrade](https://studio.appointrac.in).
 - Full terms: [Terms of Service](https://studio.appointrac.in/terms) ·
   [Privacy Policy](https://studio.appointrac.in/privacy).
+
+-----
+
+## 📢 Announcements
+
+A banner can appear at the top of the panel — below the header, above
+your account info — for a timely message from Appointrac (a new model,
+a known issue). It's sent from Appointrac's backend, so it can show up
+between releases, not just when the extension itself updates. Click the
+**✕** to dismiss it; a dismissed announcement stays dismissed, but a
+*different*, newer one still shows up on its own.
 
 -----
 
