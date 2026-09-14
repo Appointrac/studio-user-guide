@@ -1,13 +1,13 @@
 [![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/appointrac-studio/cgmhhafpjnooleooijnfjndmmcecjoji)
 <!-- Version tracks the extension's manifest.json, not this guide's own history - bump both together. -->
-![Version](https://img.shields.io/badge/version-1.0.7-informational?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.8-informational?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/platform-Chrome-yellow?style=for-the-badge)
 [![Changelog](https://img.shields.io/badge/changelog-what's_new-informational?style=for-the-badge)](CHANGELOG.md)
 
 # 🎬 Appointrac Studio — Batch Prompt Automation for Google Flow
 
 **Appointrac Studio** is a Chrome extension for batch-running prompts on
-[Google Flow](https://labs.google/fx/tools/flow). Queue up a list of
+[Google Flow](https://flow.google.com). Queue up a list of
 prompts, click Run, and walk away — Appointrac Studio submits them one by one and
 downloads the finished videos/images automatically, instead of you
 clicking through Flow's UI by hand for every single prompt.
@@ -142,7 +142,7 @@ between releases, not just when the extension itself updates. Click the
 ### Getting started
 
 1. **Open a Google Flow project** — Appointrac Studio only activates on Flow
-   project pages (`labs.google/fx/tools/flow/project/...`).
+   project pages (`flow.google.com/project/...`).
 2. **Open the side panel** from the extension icon.
 3. **Pick a mode** — choose a category (Video / Image / Agent) first,
    then the specific sub-mode underneath it.
