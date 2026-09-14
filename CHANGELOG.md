@@ -2,7 +2,12 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.7 (current)
+## v1.0.8 (current)
+
+Google Flow moved from `labs.google/fx/tools/flow` to `flow.google.com`
+— Appointrac Studio updated to follow. No visible feature changes.
+
+## v1.0.7
 
 The panel now shows a dismissible announcement banner (info/warning)
 sent directly from Appointrac's backend, so a message — a new model, a
