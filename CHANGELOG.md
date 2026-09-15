@@ -2,7 +2,15 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.8 (current)
+## v1.0.9 (current)
+
+Fixed a bug where a finished generation could get stuck at 100% and never
+download. Added a "taking longer than usual" note in the queue when a
+running item stalls, so it's clear something's still happening instead
+of looking frozen. Also updated to keep working with Google Flow's
+recent UI rewrite.
+
+## v1.0.8
 
 Google Flow moved from `labs.google/fx/tools/flow` to `flow.google.com`
 — Appointrac Studio updated to follow. No visible feature changes.
