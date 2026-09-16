@@ -2,7 +2,14 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.9 (current)
+## v1.0.10 (current)
+
+Fixed generations sometimes getting stuck and never completing. Fixed
+character attachments (@mentions) occasionally failing to register,
+which could cause a prompt to never actually submit. Various other
+reliability improvements to automation.
+
+## v1.0.9
 
 Fixed a bug where a finished generation could get stuck at 100% and never
 download. Added a "taking longer than usual" note in the queue when a
