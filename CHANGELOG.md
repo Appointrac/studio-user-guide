@@ -2,7 +2,13 @@
 
 User-facing changes for each released version of Appointrac Studio.
 
-## v1.0.10 (current)
+## v1.0.11 (current)
+
+"Report a Bug" now opens Appointrac's own bug-bounty page directly,
+with the relevant log entries copied to your clipboard automatically
+so you can paste them right in — instead of a pre-filled GitHub issue.
+
+## v1.0.10
 
 Fixed generations sometimes getting stuck and never completing. Fixed
 character attachments (@mentions) occasionally failing to register,
